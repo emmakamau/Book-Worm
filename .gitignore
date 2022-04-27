@@ -1,0 +1,4 @@
+bookwormenv/
+*.pyc
+instance/
+start.sh
