@@ -20,11 +20,43 @@ import urllib.request,json
 from .models import Books
 
 # Getting api key
-api_key = None
+key = None
 # Getting the movie base url
 base_url = None
 
 def configure_request(app):
-    global api_key,base_url
-    api_key = app.config['BOOKS_API_KEY']
+    global key,base_url
+    key = app.config['BOOKS_API_KEY']
     base_url = app.config['BOOKS_API_BASE_URL']
+    print(key)
+
+def get_books(category):
+    get_books_url = base_url.format(category,key)
+    print(get_books_url)
+    with urllib.request.urlopen(get_books_url) as url:
+        get_books_data = url.read()
+        get_books_response = json.loads(get_books_data)
+
+        books_results = None
+
+        if get_books_response['items']:
+            books_results_list = get_books_response['items']
+            books_results = process_results(books_results_list)
+
+    return books_results
+
+def process_results(books_list):
+    books_results = []
+    for books in books_list:
+        
+        id = books.get('id')
+        title = books.get('volumeInfo',{}).get('title')
+        authors = books.get('volumeInfo',{}).get('authors')
+        publishedDate = books.get('volumeInfo',{}).get('publishedDate')
+        description = books.get('volumeInfo',{}).get('description')
+        language = books.get('volumeInfo',{}).get('language')
+
+        books_object = Books(id,title,authors,publishedDate,description,language)
+        books_results.append(books_object)
+
+    return books_results

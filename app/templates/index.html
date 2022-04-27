@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+</head>
+
+<body>
+    <h1>Python books</h1>
+    {% for book in python_books%}
+    <p>{{ book.title }}</p>
+    {% endfor %}
+
+    <h1>Flask books</h1>
+    {% for book in flask_books%}
+    <p>{{ book.title }}</p>
+    {% endfor %}
+
+    <h1>Django books</h1>
+    {% for book in django_books%}
+    <p>{{ book.title }}</p>
+    {% endfor %}
+</body>
+
+</html>

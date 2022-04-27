@@ -1,13 +1,6 @@
 '''
 We define views that will be rendered on our pages
 
-from flask import render_template,request,redirect,url_for
-from . import main
-from ..request import get_movies,get_movie,search_movie
-from .forms import ReviewForm
-from ..models import Review
-
-
 # Views
 @main.route('/')  #route decorator
 def index(): #view function
@@ -24,3 +17,17 @@ def index(): #view function
   
    return render_template('index.html', title = title, popular = popular_movies, upcoming = upcoming_movie, now_showing = now_showing_movie )
 '''
+from multiprocessing import context
+from flask import render_template,request,redirect,url_for
+from . import main
+from app.request import *
+from app.models import Books
+
+#Views
+@main.route('/')
+def index():
+   flask_books = get_books('flask')
+   python_books = get_books('python')
+   django_books = get_books('django')
+   
+   return render_template('index.html',flask_books=flask_books,python_books=python_books,django_books=django_books)

@@ -14,11 +14,5 @@ class Books:
         self.description = description
         self.language = language
 
-    def save_book(self):
-        Books.books_list.append(self)
-
-    @classmethod
-    def display_books(cls):
-        return cls.books_list
 
     pass
