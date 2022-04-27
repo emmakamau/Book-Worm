@@ -1,22 +1,21 @@
 ## Configuration files 
-'''
-Example:
+import os
 
 class Config:
-    MOVIE_API_BASE_URL ='https://api.themoviedb.org/3/movie/{}?api_key={}'
-    MOVIE_API_KEY = os.environ.get('MOVIE_API_KEY')
-    SECRET_KEY = os.environ.get('SECRET_KEY')
+    BOOKS_API_BASE_URL = 'https://www.googleapis.com/books/v1/volumes?q={}?api_key={}'
+    BOOKS_API_KEY = os.environ.get('BOOKS_API_KEY')
+    # SECRET_KEY = os.environ.get('SECRET_KEY')
     pass
 
 class ProdConfig(Config):
-    (Production  configuration child class
-    Args:Config: The parent configuration class with General configuration settings)
+    # (Production  configuration child class
+    # Args:Config: The parent configuration class with General configuration settings)
 
     pass
 
 class DevConfig(Config):
-    (Development configuration child class
-    Args:Config: The parent configuration class with General configuration settings)
+    # (Development configuration child class
+    # Args:Config: The parent configuration class with General configuration settings)
     
     DEBUG = True
 
@@ -24,4 +23,3 @@ config_options = {
 'development':DevConfig,
 'production':ProdConfig
 }
-'''
