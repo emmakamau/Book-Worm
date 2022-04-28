@@ -8,7 +8,7 @@ body{
 hr{
     width: 75%;
     border-width: 6px;
-    color: #005555;
+    border-color: #005555;
 }
 
 /* Navbar styling */

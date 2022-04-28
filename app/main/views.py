@@ -2,6 +2,7 @@
 We define views that will be rendered on our pages
 '''
 from multiprocessing import context
+from unicodedata import category
 from flask import render_template,request,redirect,url_for
 from . import main
 from app.request import *
@@ -29,3 +30,9 @@ def search(book):
    title = book.capitalize()
 
    return render_template('search.html', searched_books=searched_books, title=title)
+
+@main.route('/book/<int:id>')
+def get_book(id):
+   book = get_book(id)
+
+   return render_template('book.html',book=book)
