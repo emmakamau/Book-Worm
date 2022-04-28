@@ -61,3 +61,16 @@ def process_results(books_list):
         books_results.append(books_object)
 
     return books_results
+
+def search_book(book):
+    search_book_url = 'https://www.googleapis.com/books/v1/volumes?q={}'.format(book)
+    with urllib.request.urlopen(search_book_url) as url:
+        search_book_data = url.read()
+        search_book_response = json.loads(search_book_data)
+
+        search_book_results = None
+
+        if search_book_response['items']:
+            search_book_list = search_book_response['items']
+            search_book_results = process_results(search_book_list)
+    return search_book_results

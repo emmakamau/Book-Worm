@@ -5,6 +5,12 @@ body{
     font-weight: 550;
 }
 
+hr{
+    width: 75%;
+    border-width: 6px;
+    color: #005555;
+}
+
 /* Navbar styling */
 
 .navbar{
@@ -27,15 +33,37 @@ body{
     font-size: larger;
 }
 
+/* Form styling */
+.search-btn{
+    background-color: #005555;
+    color: #F7FF93;
+}
+
+.search-btn:hover{
+    background-color:#F7FF93;
+    color: #005555;
+    font-weight: bold;
+}
+
+.form-control:hover{
+    box-shadow: #005555;
+    border: #F7FF93;
+}
+
+.form-control{
+    border: #005555;
+}
+
 /* Display books section */
 
 .display-books{
-    padding: 2vh 12vw;
+    padding: 1vh 12vw;
 }
 
 .title-heading{
     font-family: 'Square Peg', cursive;
     font-weight: 900;
+    font-size: 4rem;
 }
 
 .book-title{

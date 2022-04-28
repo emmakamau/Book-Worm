@@ -1,18 +1,16 @@
 {% extends 'base.html'%}
 {% import 'macros.html' as macro%}
 
-<!-- Styles block -->
-{% block styles%}
-{{ super() }}
-<link rel="stylesheet" href="{{url_for('static',filename='css/index.css')}}">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Lato:wght@300&family=Square+Peg&display=swap" rel="stylesheet">
-{% endblock %}
-<!-- Content block -->
-
 {% block content %}
 <div class="display-books">
+    <!-- Search form -->
+    <div class="search-form" align="center">
+        <form class="form-inline">
+            <input type="text" class="form-control mb-2 mr-sm-2 input-form" name="book_query" id="" placeholder="Search book">
+            <button type="submit" class="btn btn-primary mb-2 search-btn">Submit</button>
+        </form>
+    </div>
+    
     <!-- Python books -->
     <div id="python-books">
         <h1 class="title-heading">Python books</h1>
@@ -20,7 +18,9 @@
             {{ macro.displayBooksList(python_books)}}
         </table>
     </div>
-
+    <div class="separator" align="center">
+        <hr>
+    </div>
     <!-- Flask books -->
     <div id="flask-books">
         <h1 class="title-heading">Flask books</h1>
@@ -28,7 +28,9 @@
             {{ macro.displayBooksList(flask_books)}}
         </table>
     </div>
-
+    <div class="separator" align="center">
+        <hr>
+    </div>
     <!-- Django books -->
     <div id="django-books">
         <h1 class="title-heading">Django books</h1>

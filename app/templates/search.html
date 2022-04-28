@@ -1,0 +1,13 @@
+{% extends 'base.html'%}
+{% import 'macros.html' as macro%}
+
+{% block content %}
+
+<div class="display-books">
+    <h3>Found {{ searched_books|count }} matches for <span class="title-heading">{{title}} books.</span></h3>
+    <table class="data-table">
+        {{ macro.displayBooksList(searched_books)}}
+    </table>
+</div>
+
+{% endblock %}
