@@ -13,25 +13,25 @@
     <!-- Python books -->
     <div id="python-books">
         <h1 class="title-heading">Python books</h1>
-        <div class="row">
-            <div class="col-3">{{ macro.displayBooksList(python_books)}}</div>
-        </div>
+        <table class="data-table">
+            {{ macro.displayBooksList(python_books)}}
+        </table>
     </div>
 
     <!-- Flask books -->
     <div id="flask-books">
         <h1 class="title-heading">Flask books</h1>
-        <div class="row">
-            <div class="col-3">{{ macro.displayBooksList(flask_books)}}</div>
-        </div>
+        <table>
+            {{ macro.displayBooksList(flask_books)}}
+        </table>
     </div>
 
     <!-- Django books -->
     <div id="django-books">
         <h1 class="title-heading">Django books</h1>
-        <div class="row">
-            <div class="col-3">{{ macro.displayBooksList(django_books)}}</div>
-        </div>
+        <table>
+            {{ macro.displayBooksList(django_books)}}
+        </table>
     </div>
 </div>
 {% endblock%}

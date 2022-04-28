@@ -9,7 +9,7 @@ BDD:
 '''
 class BookTest(unittest.TestCase):
     def setUp(self) -> None:
-        self.new_book = Books(1,"The 5AM Club","Robin Sharma","20/09/1990","Lorem Ipsum","eng")
+        self.new_book = Books(1,"The 5AM Club","Robin Sharma","20/09/1990","Lorem Ipsum","eng","http://books.google.com/books/content?id=NdZOCwAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api")
 
     def tearDown(self) -> None:
         Books.books_list = []
@@ -21,6 +21,7 @@ class BookTest(unittest.TestCase):
         self.assertEqual(self.new_book.publishedDate,"20/09/1990")
         self.assertEqual(self.new_book.description,"Lorem Ipsum")
         self.assertEqual(self.new_book.language,"eng")
+        self.assertEqual(self.new_book.image,"http://books.google.com/books/content?id=NdZOCwAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api")
 
 if __name__ == '__main__':
     unittest.main()

@@ -1,9 +1,29 @@
 {% macro displayBooksList(books_list) %}
 
-    {% for book in books_list %}
-    <div class="col-xs-12 col-sm-4 col-md-2 col-lg-2 movie-card">
-        {{book.title}}
-    </div>
-    {% endfor %}
+
+{% for book in books_list %}
+<tr class="table-row">
+    <td>
+        <div class="row ">
+            <div class="col-md-3">
+                <img src="{{book.image}}" alt="book-image">
+            </div>
+            <div class="col-md-3">
+                <h4 class="book-title">{{book.title}}</h4>
+                <p class="">Book by: <span class="book-author">{{book.authors}}</span></p>
+                <p class="">Published On: <span class="book-pub-date">{{book.publishedDate}}</span></p>
+            </div>
+            <div class="col-md-6">
+                <h4>Description</h4>
+                {% if book.description %}
+                <p class="">{{book.description|truncate(220)}}</p>
+                {% else %}
+                <p class="">Ooops!! No description for this book</p>
+                {% endif %}
+            </div>
+        </div>
+    </td>
+</tr>
+{% endfor %}
 
 {% endmacro %}

@@ -55,8 +55,9 @@ def process_results(books_list):
         publishedDate = books.get('volumeInfo',{}).get('publishedDate')
         description = books.get('volumeInfo',{}).get('description')
         language = books.get('volumeInfo',{}).get('language')
+        image = books.get('volumeInfo',{}).get('imageLinks',{}).get('thumbnail')
 
-        books_object = Books(id,title,authors,publishedDate,description,language)
+        books_object = Books(id,title,authors,publishedDate,description,language,image)
         books_results.append(books_object)
 
     return books_results
