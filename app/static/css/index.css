@@ -1,6 +1,30 @@
 body{
     background-color: #F7FF93;
     color: #005555;
+    font-family: 'Lato', sans-serif;
+    font-weight: 550;
+}
+
+/* Navbar styling */
+
+.navbar{
+    background-color: #005555;
+}
+
+.link-nav{
+    color: #F7FF93;
+    text-decoration: none;
+    font-weight: 800;
+}
+
+.navbar-collapse{
+    float: right;
+}
+
+.navbar-brand:hover{
+    color: #F7FF93;
+    text-decoration: none;
+    font-size: larger;
 }
 
 /* Display books section */
@@ -9,5 +33,59 @@ body{
     padding: 2vh 12vw;
 }
 
+.title-heading{
+    font-family: 'Square Peg', cursive;
+    font-weight: 900;
+}
 
+.book-title{
+    font-weight: 800;
+}
+
+.book-desc-title{
+    font-weight: 700;
+}
+
+.book-desc{
+    font-weight: 600;
+}
+
+.table-row{
+    padding: 2vh 0;
+}
+
+
+
+/* Media Queries */
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+    .display-books{
+        padding: 2vh 1vw;
+    }
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+    .display-books{
+        padding: 2vh 1vw;
+    }
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+    .display-books{
+        padding: 2vh 12vw;
+    }
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+
+}
 
