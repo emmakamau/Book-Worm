@@ -1,0 +1,10 @@
+body{
+    background-color: #F7FF93;
+    color: #005555;
+}
+
+/* Display books section */
+
+.display-books{
+    padding: 2vh 4vw;
+}

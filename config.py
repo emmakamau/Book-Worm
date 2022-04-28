@@ -4,9 +4,7 @@ import os
 
 class Config:
     BOOKS_API_KEY = os.environ.get('BOOKS_API_KEY')
-    print(BOOKS_API_KEY)
     BOOKS_API_BASE_URL = 'https://www.googleapis.com/books/v1/volumes?q={}'
-    #BOOKS_API_BASE_URL = 'https://www.googleapis.com/books/v1/volumes?q={}'
     SECRET_KEY = os.environ.get('SECRET_KEY')
     pass
 

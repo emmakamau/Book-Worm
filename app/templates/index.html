@@ -1,29 +1,37 @@
-<!doctype html>
-<html lang="en">
+{% extends 'base.html'%}
+{% import 'macros.html' as macro%}
 
-<head>
-    <title>Title</title>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<!-- Styles block -->
+{% block styles%}
+{{ super() }}
+<link rel="stylesheet" href="{{url_for('static',filename='css/index.css')}}">
+{% endblock %}
+<!-- Content block -->
 
-</head>
+{% block content %}
+<div class="display-books">
+    <!-- Python books -->
+    <div id="python-books">
+        <h1 class="title-heading">Python books</h1>
+        <div class="row">
+            <div class="col-3">{{ macro.displayBooksList(python_books)}}</div>
+        </div>
+    </div>
 
-<body>
-    <h1>Python books</h1>
-    {% for book in python_books%}
-    <p>{{ book.title }}</p>
-    {% endfor %}
+    <!-- Flask books -->
+    <div id="flask-books">
+        <h1 class="title-heading">Flask books</h1>
+        <div class="row">
+            <div class="col-3">{{ macro.displayBooksList(flask_books)}}</div>
+        </div>
+    </div>
 
-    <h1>Flask books</h1>
-    {% for book in flask_books%}
-    <p>{{ book.title }}</p>
-    {% endfor %}
-
-    <h1>Django books</h1>
-    {% for book in django_books%}
-    <p>{{ book.title }}</p>
-    {% endfor %}
-</body>
-
-</html>
+    <!-- Django books -->
+    <div id="django-books">
+        <h1 class="title-heading">Django books</h1>
+        <div class="row">
+            <div class="col-3">{{ macro.displayBooksList(django_books)}}</div>
+        </div>
+    </div>
+</div>
+{% endblock%}
